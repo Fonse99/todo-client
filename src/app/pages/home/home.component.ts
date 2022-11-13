@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
       isComplete: true,
     },
   ];
-
   showAddingElement: boolean = false;
+  modalToShow: string | null = 'task';
 
   constructor(private store: Store<CreationState>) {
     this.store.subscribe((state) => {
@@ -52,6 +52,17 @@ export class HomeComponent implements OnInit {
 
     this.store.dispatch({
       type: currentState ? '[creation].HIDE' : '[creation].SHOW',
+    });
+  }
+
+  showModal(event: Event) {
+    let target = event.target as HTMLElement;
+    let type = target.getAttribute('name');
+
+    this.modalToShow = type;
+
+    this.store.dispatch({
+      type: '[modal].SHOW',
     });
   }
 }

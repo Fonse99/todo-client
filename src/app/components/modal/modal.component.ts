@@ -21,7 +21,7 @@ export class ModalComponent {
 
     if (target.getAttribute('name') == 'modal') {
       const action: Action = {
-        type: 'HIDE',
+        type: '[modal].HIDE',
       };
 
       this.store.dispatch(action);

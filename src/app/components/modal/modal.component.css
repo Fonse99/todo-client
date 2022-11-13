@@ -1,7 +1,7 @@
 .modal {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--red-secondary);
   height: 70%;
   width: 70%;
   margin: auto;

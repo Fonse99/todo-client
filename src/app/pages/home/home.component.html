@@ -11,11 +11,18 @@
 
   <div class="floating-list" [class.visible]="showAddingElement">
     <ul>
-      <li class="floating-list-item">Lista</li>
-      <li class="floating-list-item">Grupo</li>
-      <li class="floating-list-item">Tarea</li>
+      <li name="list" class="floating-list-item" (click)="showModal($event)">
+        Lista
+      </li>
+      <li name="group" class="floating-list-item" (click)="showModal($event)">
+        Grupo
+      </li>
+      <li name="task" class="floating-list-item" (click)="showModal($event)">
+        Tarea
+      </li>
     </ul>
   </div>
+
   <cmp-input
     [handler]="handleAddNewElement"
     value="+"
@@ -25,4 +32,41 @@
   <!-- <button (click)="handleAddNewElement()">test</button> -->
 </div>
 
-<cmp-modal></cmp-modal>
+<cmp-modal>
+  <div [ngSwitch]="modalToShow" class="modal-header">
+    <h2 *ngSwitchCase="'list'">Nueva Lista</h2>
+    <h2 *ngSwitchCase="'group'">Nuevo Grupo</h2>
+    <h2 *ngSwitchDefault>Nueva Tarea</h2>
+  </div>
+  <div [ngSwitch]="modalToShow" class="div modal-body">
+    <form *ngSwitchCase="'list'" action="">
+      <cmp-input></cmp-input>
+      <cmp-input></cmp-input>
+      <cmp-input
+        value="Guardar"
+        type="button"
+        classes="button rounded"
+      ></cmp-input>
+    </form>
+    <form *ngSwitchCase="'group'">
+      <cmp-input></cmp-input>
+      <cmp-input></cmp-input>
+      <cmp-input></cmp-input>
+      <cmp-input
+        value="Guardar"
+        type="button"
+        classes="button rounded"
+      ></cmp-input>
+    </form>
+    <form *ngSwitchDefault action="">
+      <cmp-input placeHolder="Título"></cmp-input>
+      <cmp-input placeHolder="Descripción"></cmp-input>
+      <cmp-input placeHolder="Vencimiento"></cmp-input>
+      <cmp-input
+        classes="button text rounded"
+        type="submit"
+        value="Guardar"
+      ></cmp-input>
+    </form>
+  </div>
+</cmp-modal>

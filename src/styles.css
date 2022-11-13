@@ -14,11 +14,19 @@
   border-radius: 8px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  text-align: center;
+  justify-content: space-around;
+}
+
+
 /*Dev purpose only*/
 body {
   background-color: black;
 }
-
 
 /*---------------Animations------------*/
 

@@ -2,10 +2,10 @@ import { Action } from '@ngrx/store';
 
 export function modalReducer(state: boolean = false, action: Action) {
   switch (action.type) {
-    case 'SHOW':
+    case '[modal].SHOW':
       return (state = true);
 
-    case 'HIDE':
+    case '[modal].HIDE':
       return (state = false);
 
     default:
