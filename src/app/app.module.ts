@@ -15,6 +15,8 @@ import { TitlesComponent } from './components/info/titles/titles.component';
 import { ListItemsComponent } from './components/info/list-items/list-items.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { StoreModule } from '@ngrx/store';
+import { modalReducer } from './reducers/modal.reducer';
+import { logingReducer } from './reducers/login.reducer';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,14 @@ import { StoreModule } from '@ngrx/store';
     NavigationComponent,
     TitlesComponent,
     ListItemsComponent,
-    ModalComponent
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({ modal: modalReducer, login: logingReducer }, {}),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
