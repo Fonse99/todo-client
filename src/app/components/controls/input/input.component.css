@@ -28,7 +28,6 @@ input {
   background-color: var(--text-secondary);
 }
 
-
 .circled {
   border-radius: 50%;
   width: 70px;
@@ -43,4 +42,5 @@ input {
   right: 50px;
   font-size: 60px;
   font-weight: lighter;
+  cursor: pointer;
 }

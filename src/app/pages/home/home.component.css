@@ -28,6 +28,15 @@
   height: 190px;
   width: 70px;
   border-radius: 8px 8px 50px 50px;
+  animation: appear 400ms normal 0s;
+}
+
+.floating-list-item {
+  cursor: pointer;
+}
+
+.floating-list-item:hover {
+  background-color: var(--text-secondary);
 }
 
 .visible {

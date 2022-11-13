@@ -3,7 +3,7 @@
   <div class="home-content">
     <cmp-navigation></cmp-navigation>
     <cmp-container classes="container rounded shadowed size-w-large">
-      <cmp-list-items [data]="list"></cmp-list-items>
+      <cmp-list-items [task]="true" [data]="list"></cmp-list-items>
       <cmp-list-items [data]="completed"></cmp-list-items>
     </cmp-container>
   </div>
@@ -11,9 +11,9 @@
 
   <div class="floating-list" [class.visible]="showAddingElement">
     <ul>
-      <li>Lista</li>
-      <li>Grupo</li>
-      <li>Tarea</li>
+      <li class="floating-list-item">Lista</li>
+      <li class="floating-list-item">Grupo</li>
+      <li class="floating-list-item">Tarea</li>
     </ul>
   </div>
   <cmp-input
@@ -22,6 +22,7 @@
     type="button"
     classes="circled floating-button"
   ></cmp-input>
+  <!-- <button (click)="handleAddNewElement()">test</button> -->
 </div>
 
 <cmp-modal></cmp-modal>

@@ -1,5 +1,7 @@
 import { FunctionExpr } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { CreationState } from 'src/app/reducers/creation.reducer';
 
 @Component({
   selector: 'cmp-input',
@@ -12,6 +14,8 @@ export class InputComponent {
   @Input() placeHolder = 'Example...';
   @Input() value = '';
   @Input() handler = () => {};
+
+  constructor(private store: Store<CreationState>) {}
 
   handleClick() {
     this.handler();

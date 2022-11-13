@@ -17,6 +17,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { StoreModule } from '@ngrx/store';
 import { modalReducer } from './reducers/modal.reducer';
 import { logingReducer } from './reducers/login.reducer';
+import { CreationReducer } from './reducers/creation.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,10 @@ import { logingReducer } from './reducers/login.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ modal: modalReducer, login: logingReducer }, {}),
+    StoreModule.forRoot(
+      { modal: modalReducer, login: logingReducer, creation: CreationReducer },
+      {}
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -13,3 +13,22 @@
 .rounded {
   border-radius: 8px;
 }
+
+/*Dev purpose only*/
+body {
+  background-color: black;
+}
+
+
+/*---------------Animations------------*/
+
+@keyframes appear {
+  from {
+
+    height: 90px;
+  }
+
+  to {
+    height: 190px;
+  }
+}
