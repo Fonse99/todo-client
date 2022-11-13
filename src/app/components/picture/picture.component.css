@@ -1,0 +1,22 @@
+
+
+.picture-bordered {
+  border-radius: 10px;
+}
+
+.picture-rounded {
+  border-radius: 50%;
+}
+
+.picture-bordered, .picture-rounded {
+  height: 45px;
+  width: 45px;
+}
+
+.size-h-medium {
+  width: 60px;
+}
+
+.size-w-medium {
+  width: 60px;
+}

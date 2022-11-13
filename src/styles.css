@@ -1,0 +1,15 @@
+:root {
+  --red-primary: #750520;
+  --red-secondary: #ba5f5f;
+  --text-primary: #fff;
+  --text-secondary: #390707;
+  --font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.shadowed {
+  box-shadow: 0px 2px 8px 3px darkgray;
+}
+
+.rounded {
+  border-radius: 8px;
+}

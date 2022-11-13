@@ -1,0 +1,26 @@
+.sidebar {
+  height: 800px;
+  width: 180px;
+  background-color: var(--red-primary);
+  color: var(--text-primary);
+  justify-self: left;
+}
+
+.display-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.signout {
+  cursor: pointer;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.signout:active{
+  color: var(--red-secondary);
+}
+
+h1{
+  text-align: center;
+}

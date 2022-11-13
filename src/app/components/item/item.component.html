@@ -1,0 +1,12 @@
+<span class="item-container rounded">
+  <div class="item-body" *ngIf="task; else Task">
+    <li class="item-value">{{value}}</li>
+    <input type="checkbox" />
+  </div>
+</span>
+
+<ng-template #Task>
+   <div class="item-body">
+      <li class="item-value">{{value}}</li>
+   </div>
+  </ng-template>

@@ -1,0 +1,21 @@
+.container {
+  background-color: var(--red-secondary);
+  height: 500px;
+  width: 500px;
+}
+
+.size-w-small {
+  width: 300px;
+}
+
+.size-h-small {
+  height: 300px;
+}
+
+.size-h-medium {
+  height: 400px;
+}
+
+.size-w-large {
+  width: 700px;
+}

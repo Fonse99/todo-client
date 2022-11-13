@@ -1,0 +1,31 @@
+.active {
+  background-color: var(--red-primary);
+  color: white;
+}
+
+nav {
+  border-bottom: 1px solid;
+  width: 80%;
+
+}
+
+ul {
+  padding-inline-start: 0px;
+  margin-inline-start: 0px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+li {
+  background-color: var(--red-secondary);
+  width: 100px;
+  padding-block: 5px;
+  text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+li:active{
+  background-color: var(--red-primary);
+}

@@ -1,0 +1,46 @@
+input {
+  border: none;
+  height: 50px;
+  width: 350px;
+  text-align: center;
+}
+
+.text {
+  color: var(--red-primary);
+}
+
+.text::placeholder {
+  color: var(--red-primary);
+}
+
+.text:focus {
+  outline-color: var(--tex-secondary);
+  outline-style: solid;
+}
+
+.button {
+  background-color: var(--red-primary);
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.button:active, .floating-button:active {
+  background-color: var(--text-secondary);
+}
+
+
+.circled {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.floating-button {
+  background-color: var(--red-primary);
+  color: var(--text-primary);
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  font-size: 60px;
+  font-weight: lighter;
+}

@@ -1,0 +1,35 @@
+.home-container {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picture {
+  align-self: flex-start;
+  margin-bottom: 60px;
+}
+
+.login-form {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.login-form>p{
+  margin: 0px;
+  font-size: small;
+  font-weight: bold;
+  font-family: var(--font-family);
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+h2 {
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  margin-block-end: 0px;
+}

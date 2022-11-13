@@ -1,0 +1,45 @@
+.home-container {
+  display: flex;
+  height: 800px;
+  width: 100%;
+}
+
+.list-container-home {
+  margin-left: 40px;
+}
+
+.home-content {
+  margin-left: 80px;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.home-display {
+  display: flex;
+}
+
+.floating-list{
+  display: none;
+  background-color: var(--red-primary);
+  color: var(--text-primary);
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  height: 190px;
+  width: 70px;
+  border-radius: 8px 8px 50px 50px;
+}
+
+.visible {
+  display: block;
+}
+
+ul{
+  list-style: none;
+  padding: 0px;
+}
+
+ul>li{
+  text-align: center;
+  margin-bottom: 9px;
+}
