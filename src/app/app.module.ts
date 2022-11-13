@@ -13,6 +13,8 @@ import { ContainerComponent } from './components/container/container.component';
 import { NavigationComponent } from './components/controls/navigation/navigation.component';
 import { TitlesComponent } from './components/info/titles/titles.component';
 import { ListItemsComponent } from './components/info/list-items/list-items.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { ListItemsComponent } from './components/info/list-items/list-items.comp
     ContainerComponent,
     NavigationComponent,
     TitlesComponent,
-    ListItemsComponent
+    ListItemsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

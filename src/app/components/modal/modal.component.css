@@ -1,0 +1,28 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 70%;
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+}
+
+.modal-container {
+  margin: 0px;
+  position: absolute;
+  top: 0px;
+  display: none;
+  background-color:
+    rgba(100, 100, 100, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.modal-show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}

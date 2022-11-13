@@ -18,7 +18,7 @@
   display: flex;
 }
 
-.floating-list{
+.floating-list {
   display: none;
   background-color: var(--red-primary);
   color: var(--text-primary);
@@ -34,12 +34,12 @@
   display: block;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0px;
 }
 
-ul>li{
+ul>li {
   text-align: center;
   margin-bottom: 9px;
 }

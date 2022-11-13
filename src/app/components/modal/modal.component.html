@@ -1,0 +1,14 @@
+<div
+  name="modal"
+  class="modal-container modal-show"
+  (click)="hide($event)"
+  [class.modal-show]="isShowing"
+>
+  <div class="modal modal-show">
+    <ng-content select="div.modal-header"></ng-content>
+
+    <ng-content select="div.modal-body"></ng-content>
+
+    <ng-content select="div.modal-footer"></ng-content>
+  </div>
+</div>
