@@ -1,6 +1,6 @@
 .sidebar {
   height: 800px;
-  width: 180px;
+  width: 250px;
   background-color: var(--red-primary);
   color: var(--text-primary);
   justify-self: left;
@@ -19,6 +19,10 @@
 
 .signout:active{
   color: var(--red-secondary);
+}
+
+.list-container {
+  margin-inline: 5px;
 }
 
 h1{

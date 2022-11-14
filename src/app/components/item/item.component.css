@@ -1,4 +1,12 @@
 .item-container {
   display: flex;
   width: 80%;
+  margin-block: 5px;
+  list-style: none;
+}
+
+.item-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

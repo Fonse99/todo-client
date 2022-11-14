@@ -1,17 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'cmp-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
-export class ItemComponent implements OnInit {
-
+export class ItemComponent {
   @Input() task = false;
   @Input() value = '';
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Input() classes = 'item-container rounded';
+  @Input() checkHandler = () => {};
 }

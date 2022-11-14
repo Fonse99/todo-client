@@ -1,17 +1,20 @@
 <aside [class]="classes">
   <h1>To Do</h1>
 
-  <cmp-list-items
-    titleList="Listas"
-    [data]="list"
-    [task]="false"
-  ></cmp-list-items>
+  <div class="list-container">
+    <cmp-titles title="Listas"></cmp-titles>
 
-  <cmp-list-items
-    titleList="Grupos"
-    [data]="groups"
-    [task]="false"
-  ></cmp-list-items>
+    <ul class="list">
+      <cmp-item *ngFor="let item of list" [value]="item.title"></cmp-item>
+    </ul>
+  </div>
+
+  <div class="list-container">
+    <cmp-titles title="Grupos"></cmp-titles>
+    <ul class="list">
+      <cmp-item *ngFor="let item of groups" [value]="item.title"></cmp-item>
+    </ul>
+  </div>
 
   <p class="signout" routerLink="/login">Salir</p>
 </aside>

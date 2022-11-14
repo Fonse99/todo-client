@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { TaskModel } from 'src/app/model/task.model';
 import { CreationState } from 'src/app/reducers/creation.reducer';
 
 @Component({
@@ -8,30 +9,35 @@ import { CreationState } from 'src/app/reducers/creation.reducer';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  list = [
+  list: TaskModel[] = [
     {
       title: 'Tarea 1',
-      isComplete: false,
+      description: 'Algo',
+      beforeTo: new Date(),
+      state: 'pending',
     },
     {
       title: 'Tarea 2',
-      isComplete: false,
+      description: 'Algo',
+      beforeTo: new Date(),
+      state: 'pending',
     },
     {
       title: 'Tarea 3',
-      isComplete: false,
+      description: 'Algo',
+      beforeTo: new Date(),
+      state: 'pending',
     },
     {
       title: 'Tarea 4',
-      isComplete: false,
+      description: 'Algo',
+      beforeTo: new Date(),
+      state: 'pending',
     },
   ];
-  completed = [
-    {
-      title: 'Tarea 6',
-      isComplete: true,
-    },
-  ];
+
+  completed: TaskModel[] = [];
+
   showAddingElement: boolean = false;
   modalToShow: string | null = 'task';
 
@@ -64,5 +70,9 @@ export class HomeComponent implements OnInit {
     this.store.dispatch({
       type: '[modal].SHOW',
     });
+  }
+
+  test(task: TaskModel){
+    console.log(task)
   }
 }
