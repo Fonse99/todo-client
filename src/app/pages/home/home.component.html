@@ -8,10 +8,6 @@
         [task]="true"
         [data]="list"
       ></cmp-list-items>
-      <cmp-list-items
-        titleList="Completadas"
-        [data]="completed"
-      ></cmp-list-items>
     </cmp-container>
   </div>
   <cmp-picture [title]="user?.name"></cmp-picture>
@@ -36,40 +32,6 @@
     type="button"
     classes="circled floating-button"
   ></cmp-input>
-  <!-- <button (click)="handleAddNewElement()">test</button> -->
 </div>
 
-<cmp-modal>
-  <div [ngSwitch]="modalToShow" class="modal-header">
-    <h2 *ngSwitchCase="'list'">Nueva Lista</h2>
-    <h2 *ngSwitchCase="'group'">Nuevo Grupo</h2>
-    <h2 *ngSwitchDefault>Nueva Tarea</h2>
-  </div>
-  <div [ngSwitch]="modalToShow" class="div modal-body">
-    <form *ngSwitchCase="'list'" action="">
-      <cmp-input></cmp-input>
-      <cmp-input></cmp-input>
-      <cmp-input
-        value="Guardar"
-        type="button"
-        classes="button rounded"
-      ></cmp-input>
-    </form>
-    <form *ngSwitchCase="'group'">
-      <cmp-input></cmp-input>
-      <cmp-input></cmp-input>
-      <cmp-input></cmp-input>
-      <cmp-input
-        value="Guardar"
-        type="button"
-        classes="button rounded"
-      ></cmp-input>
-    </form>
-    <form *ngSwitchDefault [formGroup]="taskForm" (submit)="createTask()">
-      <input type="text" [formControl]="title" />
-      <input type="text" [formControl]="description" />
-
-      <input type="submit" />
-    </form>
-  </div>
-</cmp-modal>
+<cmp-modal> </cmp-modal>
