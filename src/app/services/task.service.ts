@@ -10,10 +10,10 @@ import { TaskModel } from '../model/task.model';
 export class TaskService {
   constructor(private http: HttpClient) {}
 
-  list_url: string = 'category/';
+  list_url: string = 'task';
 
-  getAll(): Observable<TaskModel> {
-    return this.http.get<TaskModel>(`${config}${this.list_url}/getAll`);
+  getAll(): Observable<TaskModel[]> {
+    return this.http.get<TaskModel[]>(`${config}${this.list_url}/getAll`);
   }
 
   add(model: TaskModel) {

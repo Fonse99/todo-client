@@ -1,6 +1,10 @@
 <div class="list-container">
   <cmp-titles [title]="titleList"></cmp-titles>
   <ul class="list">
-    <cmp-item [task]="task" *ngFor="let item of data" [value]="item.title"></cmp-item>
+    <cmp-item
+      [task]="task"
+      *ngFor="let item of data"
+      [value]="item.title"
+    ></cmp-item>
   </ul>
 </div>

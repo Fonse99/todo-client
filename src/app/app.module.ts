@@ -17,8 +17,8 @@ import { ListItemsComponent } from './components/info/list-items/list-items.comp
 import { ModalComponent } from './components/modal/modal.component';
 import { StoreModule } from '@ngrx/store';
 import { modalReducer } from './reducers/modal.reducer';
-import { logingReducer } from './reducers/login.reducer';
 import { CreationReducer } from './reducers/creation.reducer';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,10 +39,12 @@ import { CreationReducer } from './reducers/creation.reducer';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot(
-      { modal: modalReducer, login: logingReducer, creation: CreationReducer },
-      {}
-    ),
+    StoreModule.forRoot({
+      modal: modalReducer,
+      creation: CreationReducer,
+    }),
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

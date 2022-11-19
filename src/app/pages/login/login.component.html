@@ -1,16 +1,27 @@
 <div class="home-container">
   <cmp-picture class="picture"></cmp-picture>
+
   <cmp-container classes="container rounded shadowed size-h-medium">
-    <form>
+    <form [formGroup]="loginForm">
       <h2>To Do</h2>
-      <cmp-input placeHolder="Nombre de usuario..."></cmp-input>
-      <cmp-input placeHolder="Contraseña..."></cmp-input>
+
       <cmp-input
-        [handler]="login"
+        formControlName="username"
+        placeHolder="Nombre de usuario..."
+      ></cmp-input>
+
+      <cmp-input
+        formControlName="password"
+        placeHolder="Contraseña..."
+      ></cmp-input>
+
+      <cmp-input
+        [handler]="goToHome()"
         value="Acceder"
         type="button"
         classes="button rounded"
       ></cmp-input>
+
       <p>Registrarse</p>
     </form>
   </cmp-container>

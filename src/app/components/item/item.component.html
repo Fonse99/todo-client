@@ -1,5 +1,5 @@
 <span class="item-container">
-  <div class="item-body" *ngIf="task; else Task">
+  <div [id]="value" class="item-body" *ngIf="task; else Task" >
     <li class="item-value">{{ value }}</li>
     <input type="checkbox" />
   </div>

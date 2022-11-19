@@ -1,7 +1,11 @@
 <input
-  (click)="handler()"
   [value]="value"
   [type]="type"
   [class]="classes"
   [placeholder]="placeHolder"
+
+  [(ngModel)]="value"
+
+  (click)="handler()"
+  (change)="getActualValue()"
 />

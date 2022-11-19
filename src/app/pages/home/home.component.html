@@ -4,14 +4,17 @@
     <cmp-navigation></cmp-navigation>
     <cmp-container classes="container rounded shadowed size-w-large">
       <cmp-list-items
-        (dataEmitter)="test($event)"
+        titleList="Lista de tareas"
         [task]="true"
         [data]="list"
       ></cmp-list-items>
-      <cmp-list-items [data]="completed"></cmp-list-items>
+      <cmp-list-items
+        titleList="Completadas"
+        [data]="completed"
+      ></cmp-list-items>
     </cmp-container>
   </div>
-  <cmp-picture></cmp-picture>
+  <cmp-picture [title]="user?.name"></cmp-picture>
 
   <div class="floating-list" [class.visible]="showAddingElement">
     <ul>
@@ -62,15 +65,11 @@
         classes="button rounded"
       ></cmp-input>
     </form>
-    <form *ngSwitchDefault action="">
-      <cmp-input placeHolder="Título"></cmp-input>
-      <cmp-input placeHolder="Descripción"></cmp-input>
-      <cmp-input placeHolder="Vencimiento"></cmp-input>
-      <cmp-input
-        classes="button text rounded"
-        type="submit"
-        value="Guardar"
-      ></cmp-input>
+    <form *ngSwitchDefault [formGroup]="taskForm" (submit)="createTask()">
+      <input type="text" [formControl]="title" />
+      <input type="text" [formControl]="description" />
+
+      <input type="submit" />
     </form>
   </div>
 </cmp-modal>
