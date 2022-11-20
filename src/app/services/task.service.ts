@@ -18,6 +18,15 @@ export class TaskService {
     );
   }
 
+  getByState(state: string, userId: number): Observable<any>{
+
+    return this.http.get<any>(
+      `${config.base_url}${this.list_url}/getTaskByState`,
+      {params: {state, userId}}
+    );
+
+  }
+
   add(model: TaskModel) {
     this.http
       .post(`${config.base_url}${this.list_url}/add`, model)

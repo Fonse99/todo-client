@@ -10,27 +10,32 @@ import { GroupModel } from '../model/group.model';
 export class GroupService {
   constructor(private http: HttpClient) {}
 
-  list_url: string = 'group/';
+  list_url: string = 'groups';
 
-  getAll(): Observable<GroupModel> {
-    return this.http.get<GroupModel>(`${config}${this.list_url}/getAll`);
+  getAll(userId: number): Observable<GroupModel[]> {
+    return this.http.get<GroupModel[]>(
+      `${config.base_url}${this.list_url}/getAll`,
+      {
+        params: { userId },
+      }
+    );
   }
 
   add(model: GroupModel) {
     this.http
-      .post(`${config}${this.list_url}/add`, model)
+      .post(`${config.base_url}${this.list_url}/add`, model)
       .subscribe((data) => console.log(data));
   }
 
   edit(model: GroupModel) {
     this.http
-      .put(`${config}${this.list_url}/edit`, model)
+      .put(`${config.base_url}${this.list_url}/edit`, model)
       .subscribe((data) => console.log(data));
   }
 
   delete(model: GroupModel) {
     this.http
-      .delete(`${config}${this.list_url}/add`, { body: model })
+      .delete(`${config.base_url}${this.list_url}/add`, { body: model })
       .subscribe((data) => console.log(data));
   }
 }

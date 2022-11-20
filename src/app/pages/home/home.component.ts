@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { TaskModel } from 'src/app/model/task.model';
 import { UserModel } from 'src/app/model/user.model';
 import { CreationState } from 'src/app/reducers/creation.reducer';
@@ -12,18 +14,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  list: TaskModel[] = [
-    {
-      title: 'Tarea 1',
-      description: 'Algo',
-      beforeTo: new Date(),
-      state: 'pending',
-    },
-  ];
-
   showAddingElement: boolean = false;
   modalToShow: string | null = 'task';
   user: UserModel | undefined;
+  list: TaskModel[] = [];
 
   constructor(
     private store: Store<CreationState>,
@@ -32,17 +26,23 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.store.subscribe((state) => {
-      this.showAddingElement = state.creation;
-    });
-
     this.userService.sesion$.subscribe((currentUser) => {
       this.user = currentUser;
+      const userId = this.user?.Id ? this.user?.Id : -1;
+
+      this.taskService
+        .getByState('PENDING', userId)
+        .pipe((data) => {
+          return data as Observable<TaskModel[]>;
+        })
+        .subscribe((data) => {
+          console.log(userId, data);
+          this.list = data;
+        });
     });
 
-    this.taskService.getAll().subscribe((data) => {
-      console.log(data);
-      this.list = data;
+    this.store.subscribe((state) => {
+      this.showAddingElement = state.creation;
     });
   }
 
