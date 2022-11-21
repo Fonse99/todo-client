@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GroupModel } from 'src/app/model/group.model';
+import { ListModel } from 'src/app/model/list.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { GroupService } from 'src/app/services/group.service';
 import { UserService } from 'src/app/services/user.service';
@@ -12,10 +13,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  list = [
-    { title: 'Tareas de programación' },
-    { title: 'Tareas de Bases de datos' },
-  ];
+  list: ListModel[] = [];
 
   groups: GroupModel[] = [];
 
@@ -29,6 +27,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllGroups();
+    this.getAllLists();
   }
 
   getAllGroups() {
@@ -46,5 +45,25 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  getAllLists() {}
+  getAllLists() {
+    this.userService.sesion$.subscribe((currentUser) => {
+      const userId = currentUser.Id ? currentUser.Id : -1;
+
+      this.listService
+        .getAll(userId)
+        .pipe((rawData) => rawData as Observable<ListModel[]>)
+        .subscribe((data) => {
+          this.list = data;
+          console.log(this.list);
+        });
+    });
+  }
+
+  getListByState() {}
+
+  completeTask() {
+    return () => {
+
+    };
+  }
 }

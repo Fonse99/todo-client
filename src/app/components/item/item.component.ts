@@ -9,5 +9,7 @@ export class ItemComponent {
   @Input() task = false;
   @Input() value = '';
   @Input() classes = 'item-container rounded';
-  @Input() checkHandler = () => {};
+  @Input() checkHandler: Function = () => {
+    console.log('Actualizando');
+  };
 }

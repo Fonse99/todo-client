@@ -1,0 +1,30 @@
+<p>form works!</p>
+<form (submit)="saveContent()" [formGroup]="fg">
+  <cmp-input placeHolder="Nombre" formControlName="titleName"></cmp-input>
+  <cmp-input
+    placeHolder="Descripción"
+    formControlName="description"
+  ></cmp-input>
+
+  <cmp-input
+    *ngIf="type == 'task'"
+    placeHolder="vencimiento"
+    formControlName="dueDate"
+  ></cmp-input>
+
+  <select *ngIf="type == 'task'" formControlName="group">
+    <Option *ngFor="let item of groups" [value]="item.Id">
+      {{ item.title }}</Option
+    >
+    <Option>1</Option>
+  </select>
+
+  <select *ngIf="type == 'task'" formControlName="list">
+    <Option *ngFor="let item of list" [value]="item.Id">
+      {{ item.title }}</Option
+    >
+    <Option>1</Option>
+  </select>
+
+  <button type="submit">enviar</button>
+</form>

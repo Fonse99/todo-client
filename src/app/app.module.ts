@@ -19,6 +19,7 @@ import { StoreModule } from '@ngrx/store';
 import { modalReducer } from './reducers/modal.reducer';
 import { CreationReducer } from './reducers/creation.reducer';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TitlesComponent,
     ListItemsComponent,
     ModalComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,

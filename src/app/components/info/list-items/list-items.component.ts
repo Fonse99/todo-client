@@ -10,6 +10,7 @@ export class ListItemsComponent {
   @Input() titleList = 'List Name';
   @Input() task = false;
   @Input() data: TaskModel[] = [];
+  @Input() eventHandler: Function = (id: number) => {};
   @Output() dataEmitter = new EventEmitter<TaskModel>();
 
   removeElements(event: Event) {

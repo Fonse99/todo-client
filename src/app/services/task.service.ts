@@ -18,13 +18,11 @@ export class TaskService {
     );
   }
 
-  getByState(state: string, userId: number): Observable<any>{
-
+  getByState(state: string, userId: number): Observable<any> {
     return this.http.get<any>(
       `${config.base_url}${this.list_url}/getTaskByState`,
-      {params: {state, userId}}
+      { params: { state, userId } }
     );
-
   }
 
   add(model: TaskModel) {
@@ -33,10 +31,16 @@ export class TaskService {
       .subscribe((data) => console.log(data));
   }
 
-  edit(model: TaskModel) {
+  edit(taskId: number) {
     this.http
-      .put(`${config.base_url}${this.list_url}/edit`, model)
-      .subscribe((data) => console.log(data));
+      .put(
+        `${config.base_url}${this.list_url}/edit`,
+        {},
+        { params: { taskId } }
+      )
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 
   delete(model: TaskModel) {

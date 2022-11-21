@@ -3,11 +3,14 @@
   <div class="home-content">
     <cmp-navigation></cmp-navigation>
     <cmp-container classes="container rounded shadowed size-w-large">
-      <cmp-list-items
-        titleList="Lista de tareas"
-        [task]="true"
-        [data]="list"
-      ></cmp-list-items>
+      <ul>
+        <cmp-item
+          [task]="true"
+          *ngFor="let item of list"
+          [value]="item.title"
+          [checkHandler]="completeTask(item.Id)"
+        ></cmp-item>
+      </ul>
     </cmp-container>
   </div>
   <cmp-picture [title]="user?.name"></cmp-picture>
@@ -27,11 +30,15 @@
   </div>
 
   <cmp-input
-    [handler]="handleAddNewElement"
+    [handler]="handleAddNewElement()"
     value="+"
     type="button"
     classes="circled floating-button"
   ></cmp-input>
 </div>
 
-<cmp-modal> </cmp-modal>
+<cmp-modal>
+  <div class="modal-body">
+    <cmp-form [user]="user?.Id" [type]="modalToShow"></cmp-form>
+  </div>
+</cmp-modal>

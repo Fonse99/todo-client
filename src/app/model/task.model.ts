@@ -1,7 +1,9 @@
 export interface TaskModel {
-  id?: number;
+  Id?: number;
   title: string;
   description: string;
   beforeTo: Date;
-  state: 'complete' | 'pending' | 'expired';
+  state: 'COMPLETE' | 'PENDING';
+  groupId: number;
+  categoryId: number;
 }

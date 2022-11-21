@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { TaskModel } from 'src/app/model/task.model';
 import { UserModel } from 'src/app/model/user.model';
 import { CreationState } from 'src/app/reducers/creation.reducer';
@@ -47,15 +46,17 @@ export class HomeComponent implements OnInit {
   }
 
   handleAddNewElement() {
-    let currentState = false;
+    return () => {
+      let currentState = false;
 
-    this.store.subscribe((state) => {
-      currentState = state.creation;
-    });
+      this.store.subscribe((state) => {
+        currentState = state.creation;
+      });
 
-    this.store.dispatch({
-      type: currentState ? '[creation].HIDE' : '[creation].SHOW',
-    });
+      this.store.dispatch({
+        type: currentState ? '[creation].HIDE' : '[creation].SHOW',
+      });
+    };
   }
 
   showModal(event: Event) {
@@ -70,4 +71,15 @@ export class HomeComponent implements OnInit {
   }
 
   createTask() {}
+
+  completeTask(id: number | undefined) {
+    return () => {
+      const taskId = id ? id : -1;
+      this.taskService.edit(taskId);
+      console.log(id);
+    };
+  }
+
+
+
 }
